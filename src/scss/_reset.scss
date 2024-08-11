@@ -1,0 +1,278 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/font/Poppins-Regular.woff) format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/font/Poppins-SemiBold.woff) format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/font/Poppins-Bold.woff) format("woff");
+  font-weight: 700;
+}
+
+:root {
+  /* Colores */
+  --black: rgb(14, 14, 17);
+  --white: rgb(250, 250, 250);
+  --smoke-white: rgb(223, 223, 223);
+
+  --hover-avt-opt: rgb(223, 223, 223); // ??? color hover avatar y hover option modales
+  --dark-gray: rgb(73, 73, 73); // ??? color hover links, botones y letras modales
+
+  --btn-bg: rgb(14, 14, 17);
+  --btn-color: rgb(247, 177, 82);
+
+  --theme-bg: rgb(68, 68, 68);
+
+  --orange: rgb(245, 153, 48);
+  --light-orange: rgb(250, 208, 141);
+
+  --opaque-gray: rgb(146, 146, 146);
+
+  --gray-color: rgb(183, 183, 183);
+
+  --error: rgb(237, 74, 74);
+  --logout: rgb(204, 63, 63);
+
+  --box-shadow: 0 0 0.625rem rgb(0, 0, 0, 10%);
+  --shadow: rgba(70, 70, 70, 0.7);
+
+  /* Tipografía */
+  --tipo-principal: "Poppins", Helvetica, Arial, sans-serif;
+  --tipo-secundario: Verdana;
+  font-size: 16px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Theme System */
+    --black: rgb(223, 223, 223);
+    --white: rgb(43, 43, 43);
+    --smoke-white: rgb(14, 14, 17);
+    --box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.1);
+
+    --hover-avt-opt: rgb(250, 208, 141);
+
+    --btn-bg: rgb(247, 177, 82);
+    --btn-color: rgb(14, 14, 17);
+
+    --theme-bg: rgb(68, 68, 68);
+
+    --orange: rgb(245, 153, 48);
+    --light-orange: rgb(247, 177, 82);
+
+    --opaque-gray: rgb(170, 170, 170);
+  }
+}
+
+[data-theme="dark"] {
+  /* Theme Oscuro */
+  --black: rgb(223, 223, 223);
+  --white: rgb(43, 43, 43);
+  --smoke-white: rgb(14, 14, 17);
+  --box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.1);
+
+  --hover-avt-opt: rgb(250, 208, 141);
+
+  --btn-bg: rgb(247, 177, 82);
+  --btn-color: rgb(14, 14, 17);
+
+  --theme-bg: rgb(68, 68, 68);
+
+  --orange: rgb(245, 153, 48);
+  --light-orange: rgb(247, 177, 82);
+
+  --opaque-gray: rgb(170, 170, 170);
+}
+
+[data-theme="light"] {
+  /* Theme Claro */
+  --black: rgb(14, 14, 17);
+  --white: rgb(250, 250, 250);
+  --smoke-white: rgb(223, 223, 223);
+
+  --hover-avt-opt: rgb(223, 223, 223);
+  --dark-gray: rgb(73, 73, 73);
+
+  --btn-bg: rgb(14, 14, 17);
+  --btn-color: rgb(247, 177, 82);
+
+  --theme-bg: rgb(223, 223, 223);
+
+  --orange: rgb(245, 153, 48);
+  --light-orange: rgb(250, 208, 141);
+
+  --opaque-gray: rgb(146, 146, 146);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: var(--space-xs);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--opaque-gray);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.4375rem var(--black);
+    border-radius: 0.625rem;
+    -webkit-border-radius: 0.625rem;
+    -moz-border-radius: 0.625rem;
+    -ms-border-radius: 0.625rem;
+    -o-border-radius: 0.625rem;
+  }
+}
+*::before,
+*::after {
+  display: block;
+}
+
+/* Evitamos problemas con las img */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reset de los enlaces para funcionar como cajas */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+/* Evitamos problemas con los pseudo-elementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+/* Reset de las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  background-color: var(--smoke-white);
+  font-family: var(--tipo-principal);
+  color: var(--black);
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (width <= 450px) {
+  body {
+    font-size: 1.3rem;
+  }
+}
