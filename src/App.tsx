@@ -1,8 +1,7 @@
 import './App.scss';
-import { Text } from './components/Text/Text';
 
 function App() {
-  return <Text size={'span__bold'} label={'HELLOOOOO'} />
+  return <h1>HELLO PEOPLE!</h1>
 }
 
 export default App;
