@@ -38,8 +38,8 @@
   --shadow: rgba(70, 70, 70, 0.7);
 
   /* Typography */
-  --tipo-principal: 'Poppins', Helvetica, Arial, sans-serif;
-  --tipo-secundario: Verdana;
+  --primary-font: 'Poppins', Helvetica, Arial, sans-serif;
+  --secondary-font: Verdana;
   font-size: 16px;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -154,7 +154,7 @@ p a {
   display: inline;
 }
 
-/* unset styles of <li> */
+/* Unset styles of <li> */
 li {
   list-style-type: none;
 }
@@ -228,12 +228,12 @@ svg {
   fill: currentColor;
 }
 
-/* Typography configuration for all web */
+/* Set typography configuration for all web */
 body {
   min-height: 100dvh;
   font-size: 100%;
   background-color: var(--smoke-white);
-  font-family: var(--tipo-principal);
+  font-family: var(--primary-font);
   color: var(--black);
   /* (Optional) */
   hyphens: auto;
