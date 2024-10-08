@@ -103,7 +103,7 @@
 
   /* Scrollbar */
   ::-webkit-scrollbar {
-    width: var(--space-xs);
+    width: auto;
   }
   ::-webkit-scrollbar-thumb {
     background: var(--opaque-gray);

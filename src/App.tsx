@@ -1,7 +1,8 @@
 import './App.scss';
+import { LoginPage } from './views/auth/pages/login/LoginPage';
 
 function App() {
-  return <h1>HELLO PEOPLE!</h1>
+  return <LoginPage />
 }
 
 export default App;
